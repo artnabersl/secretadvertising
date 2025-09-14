@@ -359,3 +359,363 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Money Easy - Your Turn!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            width: 95%;
+            max-width: 700px;
+            padding: 30px;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-size: 2.2rem;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .giphy-container {
+            height: 400px;
+            margin: 25px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+        }
+        
+        .giphy-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .giphy-container img:hover {
+            transform: scale(1.03);
+        }
+        
+        .form-group {
+            margin: 25px 0;
+        }
+        
+        input[type="email"] {
+            width: 100%;
+            padding: 16px 22px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        input[type="email"]:focus {
+            border-color: #fdbb2d;
+            box-shadow: 0 0 0 3px rgba(253, 187, 45, 0.3);
+        }
+        
+        button {
+            background: linear-gradient(to right, #1a2a6c, #b21f1f);
+            color: white;
+            border: none;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(26, 42, 108, 0.4);
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(26, 42, 108, 0.6);
+            background: linear-gradient(to right, #243a80, #c72424);
+        }
+        
+        .anti-spam {
+            margin-top: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+                min-height: 70px;
+            }
+            
+            .giphy-container {
+                height: 300px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+                min-height: 60px;
+            }
+            
+            .giphy-container {
+                height: 250px;
+            }
+            
+            button {
+                padding: 14px 25px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Make Money So Easy It's Your Turn!</h1>
+        
+        <div class="giphy-container">
+            <img id="giphy-image" src="" alt="Make Money Giphy">
+        </div>
+        
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Enter your email address" required>
+        </div>
+        
+        <button onclick="subscribe()">Start Earning Now</button>
+        
+        <p class="anti-spam"><span class="highlight">No spam, ever.</span> We respect your privacy. You can delete your email anytime from our system with one click.</p>
+    </div>
+
+    <script>
+        // Array of all the provided Giphy URLs
+        const giphyUrls = [
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MFZtTbAr0uZyP1b8pj/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ggN2rk4WRgRoS98B1h/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MXFGeEovd8hEHIBLLH/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kWmJHvqgqNkDIGCW39/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/buToMblFLXEyCaSMSj/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TM3JuNDFYKETyPZBZX/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tktbM3mesjow1PCbuw/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HQ10u3D2jCDSPR1WF2/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Y2s5bXhjb3p0dGk3bmQya3JmYmkxYmVnbXV5OGQxa2p1cnhzb3NmdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zRldKV118pggRr8F94/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Y2s5bXhjb3p0dGk3bmQya3JmYmkxYmVnbXV5OGQxa2p1cnhzb3NmdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/f1u5CqjD0kEhWg80fp/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Y2s5bXhjb3p0dGk3bmQya3JmYmkxYmVnbXV5OGQxa2p1cnhzb3NmdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/f1u5CqjD0kEhWg80fp/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Zm1ldm42ejNjdzB0Z2duYmdvdDcxY24wcmZoODB6b29hMHJybGM4ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/XEaPFbF62JCk9UWrhz/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Zm1ldm42ejNjdzB0Z2duYmdvdDcxY24wcmZoODB6b29hMHJybGM4ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/dasq61k2kA819GdfOU/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bDIwaGM1bzBmbzlpOGNleTRyeWI2NWp2OGR3aDFwM2xrdW40bG1jeSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/82qEi0qpwMZBF3nIzF/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cXhkMDNuZ2MycnBtZHo3N3V0bmQ2NzM3b2Z2cXJpeDl1MHlyYjc0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ELgCLF35QJlSpPa5jN/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cXhkMDNuZ2MycnBtZHo3N3V0bmQ2NzM3b2Z2cXJpeDl1MHlyYjc0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Ida3OlnQqbkwRCk6kN/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3N2dzODhpc2JzbWYxeTF0ZHdwZ3FqaGY3ajk4OTBkczdkYXY1dnBkYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/FdsawCz6The1k9iRR1/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZThvNm1hbmF1N203cmM3aTJ5MDJtMWIwYm16dmM0ZjRwYmdmdjgyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ikbRAXLsu6JfnRgSXX/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZThvNm1hbmF1N203cmM3aTJ5MDJtMWIwYm16dmM0ZjRwYmdmdjgyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/FLF67XBbe9oR7KEwC5/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bnVneHk2azF4ZmJ5dmQ2cG9xbXF4c2R0Z25jcHp2NHk0YjFjcGN4eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/myQifENXe4FEcR5xI1/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3M285dHh3YndjZnF3NWtrMnllOGlzb3pvZzZ2OHpra2drNzYyazkzcyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VcsirNyF0MYPB0KLLp/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NXUxNjFsdmQwdjc2YXlvZ2I3Nmg3azIwanV4a2V2dGw3d24xa2F6NSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l4EoYGxG03xhvZGnu/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmZ1bXBwc2lsdmNmYTh1bHVrZHdreWFldXg0Mm01NjVoaXB3cW1oeCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/FbUByiI9F7di91DTgU/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmZ1bXBwc2lsdmNmYTh1bHVrZHdreWFldXg0Mm01NjVoaXB3cW1oeCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/FbUByiI9F7di91DTgU/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NWh1ZjJwam04d2xqbjQxaDE3MXE2MDdycXM0aDZnZTNlajJjZnY0eiZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/snAzKuDIYKxquM9vlH/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHk5NXV1OGxvOGNyaGNhZjE1cnhmaDJiMmNueGw5cHl6Z29mbHl0eCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/jsMVajr6pfHtz7OVSE/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHk5NXV1OGxvOGNyaGNhZjE1cnhmaDJiMmNueGw5cHl6Z29mbHl0eCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/l2SpSZ1yMhL6LYkO4/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamRnZTA4a3lrY2E2NTBnZW1sM2R5b3k2bjBtZ3l6aDhkYmk4OWdoNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/2u11zpzwyMTy8/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamRnZTA4a3lrY2E2NTBnZW1sM2R5b3k2bjBtZ3l6aDhkYmk4OWdoNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xTiTnqUxyWbsAXq7Ju/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamRnZTA4a3lrY2E2NTBnZW1sM2R5b3k2bjBtZ3l6aDhkYmk4OWdoNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9HQRIttS5C4Za/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamRnZTA4a3lrY2E2NTBnZW1sM2R5b3k2bjBtZ3l6aDhkYmk4OWdoNCZlcD12MV9naWZzX3NlYXRjaCZjdD1n/cqH9njWOsogq71mH7w/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZWw1bXR0cTA0dnZ0MTd0MjVvcnhzMDVseThodDMxOWZuOGVuZnVhayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5fBH6z8aMV1RbA4FaSc/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3a2p4Y2J4ejluazVkMGRqNW80b3Uycnh6dmZsZXRycnRlMW8zejdlcSZlcD12MV9naWZzX3NlYXRjaCZjdD1n/nkdiORALQQtOM/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3a2p4Y2J4ejluazVkMGRqNW80b3Uycnh6dmZsZXRycnRlMW8zejdlcSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nkdiORALQQtOM/giphy.gif"
+        ];
+
+        // 100 unique money-making titles
+        const titles = [
+            "Make Money So Easy It's Your Turn!",
+            "Earn $500 Daily With This Simple Method",
+            "Financial Freedom Is Just One Click Away",
+            "Turn Your Spare Time Into Cash Flow",
+            "The Secret To Easy Money Revealed",
+            "Why Work Hard When You Can Work Smart?",
+            "Get Paid For Doing Almost Nothing",
+            "Unlock Your Financial Potential Today",
+            "The Ultimate Money Making Machine",
+            "From Zero to Hero: Income Revolution",
+            "Passive Income Streams Waiting For You",
+            "Make Money While You Sleep - Seriously!",
+            "Your Breakthrough To Financial Success",
+            "The System That Prints Money Daily",
+            "Experts Don't Want You To Know This",
+            "Double Your Income in 30 Days Guaranteed",
+            "The Lazy Person's Guide To Wealth",
+            "Cash Generating Secrets Exposed",
+            "How I Made $10,000 in One Week",
+            "The Algorithm That Generates Cash",
+            "Stop Being Broke - Start Making Money",
+            "Your Financial Transformation Starts Here",
+            "The Blueprint To Automatic Wealth",
+            "Earn More Than Your Full-Time Job",
+            "Money Making Hacks That Actually Work",
+            "Revolutionary System Changes Lives",
+            "The Wealth Code Finally Cracked",
+            "Generate Income 24/7 Without Effort",
+            "The Shortcut To Financial Independence",
+            "Why Stay Poor When You Can Get Rich?",
+            "The Internet's Best Kept Money Secret",
+            "Turn $10 Into $1000 With This Method",
+            "The Perfect Side Hustle For 2023",
+            "Money Floods In With This Technique",
+            "The App That Makes You Money Automatically",
+            "Earn Cash From Anywhere In The World",
+            "The Secret Wealth Button",
+            "How Ordinary People Make Extraordinary Money",
+            "The Money Tree Is Real - Here's How",
+            "Financial Abundance Is Your Birthright",
+            "Wake Up Richer Every Single Day",
+            "The Magic Formula For Instant Income",
+            "Never Worry About Bills Again",
+            "The Profit Generator You've Been Missing",
+            "Cash Overflow In Just 7 Days",
+            "The Underground Money Method Revealed",
+            "Turn Your Phone Into An ATM Machine",
+            "The Wealth Shortcut Everyone's Using",
+            "Money Making Mastery In Minutes Daily",
+            "The System That Beats The Stock Market",
+            "Earn More In A Day Than Most Do In Week",
+            "The Secret Society of Money Makers",
+            "Unlimited Earnings Potential unlocked",
+            "The Cash Button Everyone Is Clicking",
+            "From Broke To Millionaire In Months",
+            "The Internet Money Machine Is Real",
+            "Financial Miracle Happening Now",
+            "The End Of Financial Struggles Is Here",
+            "Money Magnetism: Attract Wealth Easily",
+            "The Revolutionary Income Multiplying Method",
+            "Earn Like The Top 1% From Home",
+            "The Wealth Hack That Changed Everything",
+            "Money Flows To You On Autopilot",
+            "The Golden Key To Financial Success",
+            "Breakthrough System Generates Cash Daily",
+            "The Money Making Revolution Starts Today",
+            "Earn $100/Hour With This Simple Trick",
+            "The Secret Behind Overnight Millionaires",
+            "Financial Abundance At Your Fingertips",
+            "The Ultimate Passive Income Discovery",
+            "Money Making Genius In The Making",
+            "The Wealth Accelerator Program",
+            "Turn Dreams Into Cash Reality",
+            "The Money Matrix Decoded For You",
+            "Earn While You Play, Travel, Or Relax",
+            "The Fortune Formula Finally Revealed",
+            "Financial Freedom Faster Than Ever",
+            "The Cash Generator Everyone Needs",
+            "Money Making Magic At Work",
+            "The Billionaire's Shortcut Shared",
+            "Earn More Without Extra Effort",
+            "The Wealth Creation Button",
+            "Money Multiplier Method Exposed",
+            "The Passive Profit System Unleashed",
+            "Financial Success On Your Terms",
+            "The Income Booster Of The Century",
+            "Money Making Masterclass Free Access",
+            "The Golden Goose Is Real - Grab Yours",
+            "Earn With Zero Experience Needed",
+            "The Wealth Building Miracle",
+            "Cash Creation Made Simple & Easy",
+            "The Money Making App Of Dreams",
+            "Financial Breakthrough In Minutes",
+            "The Secret To Endless Cash Flow",
+            "Money Making Phenomenon Sweeping Nation",
+            "The Easy Money Strategy Experts Use",
+            "Earn Big With Minimal Time Investment",
+            "The Wealth Wave Is Here - Ride It",
+            "Cash In On This Unexploited Opportunity",
+            "The Money Making Machine Is Waiting",
+            "Financial Empowerment Starts Now",
+            "The Income Solution You've Needed"
+        ];
+
+        // Function to get a random Giphy URL
+        function getRandomGiphy() {
+            const randomIndex = Math.floor(Math.random() * giphyUrls.length);
+            return giphyUrls[randomIndex];
+        }
+
+        // Function to get a random title
+        function getRandomTitle() {
+            const randomIndex = Math.floor(Math.random() * titles.length);
+            return titles[randomIndex];
+        }
+
+        // Set a random Giphy and title when the page loads
+        window.onload = function() {
+            const giphyImage = document.getElementById('giphy-image');
+            giphyImage.src = getRandomGiphy();
+            
+            const titleElement = document.getElementById('title');
+            titleElement.textContent = getRandomTitle();
+        };
+
+        // Subscribe function
+        function subscribe() {
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && emailRegex.test(email)) {
+                alert(`Thank you for subscribing with: ${email}\nWe've sent a confirmation email to your inbox.`);
+                document.getElementById('email').value = '';
+                
+                // Change the Giphy and title after subscription
+                document.getElementById('giphy-image').src = getRandomGiphy();
+                document.getElementById('title').textContent = getRandomTitle();
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Allow submitting with Enter key
+        document.getElementById('email').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                subscribe();
+            }
+        });
+    </script>
+</body>
+</html>
