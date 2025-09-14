@@ -1,296 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>     
-    <meta name="google-site-verification" content="-MXEHVXZdXMAdMQlwwyf20T0BRplZ72BPk7YYerjpHI" />
-    <meta name="robots" content="NOFOLLOW">
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <title>USA Buyers Traffic System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Money Easy - Your Turn!</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@700&display=swap');
-        
-        /* Combined Styles */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #000;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            color: white;
-            line-height: 1.6;
         }
         
-        /* USA Buyers Section - NOW AT THE TOP */
-        .usa-container {
-            max-width: 800px;
-            margin: 0 auto 30px;
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            width: 95%;
+            max-width: 600px;
             padding: 30px;
-            background: #111;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            border: 2px solid #ff0000;
-        }
-        
-        .headline {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 32px;
-            line-height: 1.3;
-            margin-bottom: 20px;
             text-align: center;
+            overflow: hidden;
         }
         
-        .black-text {
-            color: black;
-            background-color: white;
-            padding: 0 5px;
-            display: inline;
-        }
-        
-        .red-text {
-            color: #ff0000;
-            display: inline;
-        }
-        
-        .usa-subtitle {
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
             font-weight: 700;
-            font-size: 22px;
-            text-align: center;
+            font-size: 2.2rem;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .giphy-container {
+            height: 320px;
             margin: 25px 0;
-            color: white;
-            background-color: #ff0000;
-            padding: 10px;
-            border-radius: 5px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
-        .proof-text {
-            font-style: italic;
-            font-size: 18px;
-            text-align: center;
-            margin: 20px 0;
-            color: #ccc;
+        .giphy-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
         
-        .form-container {
-            background: #333;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
+        .giphy-container img:hover {
+            transform: scale(1.03);
         }
         
         .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #555;
-            border-radius: 5px;
-            background: #222;
-            color: white;
-            font-size: 16px;
-        }
-        
-        .submit-btn {
-            background: #ff0000;
-            color: white;
-            border: none;
-            padding: 16px;
-            width: 100%;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background: #cc0000;
-        }
-        
-        /* Traffic Rolodex Section - NOW BELOW USA SECTION */
-        .traffic-container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: rgba(0,0,0,0.8);
-            padding: 20px;
-            border: 2px solid #ffff00;
-            border-radius: 10px;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #333;
-        }
-        
-        .main-title {
-            color: #ffff00;
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .subtitle {
-            color: #fff;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-        
-        .image-container {
-            text-align: center;
             margin: 25px 0;
         }
         
-        .main-image {
-            max-width: 100%;
-            border-radius: 8px;
-            border: 2px solid #ffff00;
-            box-shadow: 0 0 15px rgba(255,255,0,0.3);
-        }
-        
-        .traffic-section {
-            margin: 30px 0;
-            padding: 20px 0;
-            border-top: 1px solid #333;
-        }
-        
-        .section-title {
-            color: #ffff00;
-            font-size: 26px;
-            text-align: center;
-            margin-bottom: 25px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .traffic-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .traffic-button {
-            background-color: #ffff00;
-            color: #000;
-            border: none;
-            padding: 12px 10px;
+        input[type="email"] {
+            width: 100%;
+            padding: 16px 22px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
             font-size: 16px;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
+            outline: none;
             transition: all 0.3s;
-            font-family: 'Open Sans', sans-serif;
         }
         
-        .traffic-button:hover {
-            background-color: #ffcc00;
-            transform: scale(1.02);
+        input[type="email"]:focus {
+            border-color: #fdbb2d;
+            box-shadow: 0 0 0 3px rgba(253, 187, 45, 0.3);
         }
         
-        .instruction {
-            color: #ffff00;
-            text-align: center;
+        button {
+            background: linear-gradient(to right, #1a2a6c, #b21f1f);
+            color: white;
+            border: none;
+            padding: 16px 35px;
+            border-radius: 50px;
             font-size: 18px;
-            margin: 20px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(26, 42, 108, 0.4);
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(26, 42, 108, 0.6);
+            background: linear-gradient(to right, #243a80, #c72424);
+        }
+        
+        .anti-spam {
+            margin-top: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+                min-height: 70px;
+            }
+            
+            .giphy-container {
+                height: 250px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- USA Buyers Section - NOW FIRST -->
-    <div class="usa-container">
-        <div class="headline">
-            <span class="black-text">How To Get</span> 
-            <span class="red-text">USA Buyers Traffic For FREE!</span> 
-            <span class="black-text">& Earn</span> 
-            <span class="red-text">$1,000's In Profitable Income.</span>
+    <div class="container">
+        <h1 id="title">Make Money So Easy It's Your Turn!</h1>
+        
+        <div class="giphy-container">
+            <img id="giphy-image" src="" alt="Make Money Giphy">
         </div>
         
-        <div class="usa-subtitle">Get Your FREE Simple Proven System.</div>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Enter your email address" required>
+        </div>
         
-        <div class="proof-text">Real Income Proof Inside!</div>
+        <button onclick="subscribe()">Start Earning Now</button>
         
-        <div class="form-container">
-            <form method="post" action="https://www.sendsteed.com/subscribe/">
-                <div class="form-group">
-                    <input type="email" name="e110385" required placeholder="Enter Your Email Address">
-                </div>
-                <div class="form-group">
-                    <input type="text" name="n110385" required placeholder="Your Name">
-                </div>
-                <input type="hidden" name="lllid" value="110385">
-                <input type="hidden" name="lluid" value="sandyarta">
-                <input type="hidden" name="redirect" value="">
-                <input type="hidden" name="source" value="bigmonstertraffic">
-                <button type="submit" class="submit-btn">Get Instant Access Now</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Traffic Rolodex Section - NOW SECOND -->
-    <div class="traffic-container">
-        <div class="header">
-            <h1 class="main-title">Traffic Generation Success Rolodex</h1>
-            <p class="subtitle">These Are The Traffic Resources That Bring Me Leads And Sales Every Day!</p>
-            <p class="subtitle">I'm going to GIVE THIS INFORMATION AWAY For...</p>
-        </div>
-
-        <div class="image-container">
-            <img src="https://imgallery.llsvr.com/5ee5b3280a435.png" class="main-image" alt="Traffic Generation">
-        </div>
-
-        <p class="instruction">Click On The Buttons Below & They Will Open In A New Tab For You To Join</p>
-
-        <div class="traffic-section">
-            <h2 class="section-title">BEST AUTOPILOT BUYERS TRAFFIC</h2>
-            
-            <div class="traffic-grid">
-                <!-- Column 1 -->
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/j3m5j0/0//bigmonstertraffic', '_blank')">Ez Clix Club</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/vggwrz/0//bigmonstertraffic', '_blank')">The Click Engine</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/v73jd2/0//bigmonstertraffic', '_blank')">Click Traffic Cyclone</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/dntytm/0//bigmonstertraffic', '_blank')">Traffic Blaster Pro</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/b76xgt/0//bigmonstertraffic', '_blank')">Safelist Submitter</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/tssxlz4/0//bigmonstertraffic', '_blank')">Traffic Goldmine</button>
-                
-                <!-- Column 2 -->
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/pbh4xm/0//bigmonstertraffic', '_blank')">Unleashed Sales Machine</button>
-                <button class="traffic-button" onclick="window.open('https://www.myleadgensecret.com/sizzle/?rid=28382&src=buyerseitewoallesind/bigmonstertraffic', '_blank')">Tier 1 Buyers Fast Leads</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/lkw88q0/0//bigmonstertraffic', '_blank')">Automated Buyer Traffic</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/jwy5k9k/0//bigmonstertraffic', '_blank')">Dinosaur Traffic</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/vckcll/0//bigmonstertraffic', '_blank')">Big Ten Traffic</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/zd8j7pc/0//bigmonstertraffic', '_blank')">Mail Our Lists 25</button>
-            </div>
-
-            <div class="traffic-grid">
-                <!-- Additional Buttons -->
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/xcwvn19/0//bigmonstertraffic', '_blank')">Big Monster Traffic</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/n9bm6vc/0//bigmonstertraffic', '_blank')">Jaguar Jackpots 24</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/y3tgt5/0//bigmonstertraffic', '_blank')">Daily Ads Club</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/zhl349/0//bigmonstertraffic', '_blank')">Traffic Time 2.0</button>
-                <button class="traffic-button" onclick="window.open('https://warriorplus.com/o2/a/tv8v0m/0//bigmonstertraffic', '_blank')">Traffic SHARK</button>
-                <button class="traffic-button" onclick="window.open('https://emerald.worldprofit.network/?id=6271805/bigmonstertraffic', '_blank')">Unlock the Power of Effortless Traffic!</button>
-                <button class="traffic-button" onclick="window.open('https://trafficinjectors.com/?id=6271805/bigmonstertraffic', '_blank')">Guaranteed Unlimited & Targeted Traffic</button>
-                <button class="traffic-button" onclick="window.open('https://RubySolos.com/?id=6271805/bigmonstertraffic', '_blank')">5 Solo Ad Blasts To 135,000</button>
-                <button class="traffic-button" onclick="window.open('http://trafficmax123.com/?id=6271805/bigmonstertraffic', '_blank')">Traffic To 5 Sites For 1 Year</button>
-                <button class="traffic-button" onclick="window.open('https://mytrafficzapper.com/?id=6271805/bigmonstertraffic', '_blank')">Titanium Traffic Package</button>
-            </div>
-        </div>
+        <p class="anti-spam"><span class="highlight">No spam, ever.</span> We respect your privacy. You can delete your email anytime from our system with one click.</p>
     </div>
 
     <script>
-    // Form submission handling
-    document.querySelector('.form-container form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for subscribing! We will keep you updated.');
-        this.submit();
-    });
+        // Array of all the provided Giphy URLs
+        const giphyUrls = [
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MFZtTbAr0uZyP1b8pj/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ggN2rk4WRgRoS98B1h/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MXFGeEovd8hEHIBLLH/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kWmJHvqgqNkDIGCW39/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/buToMblFLXEyCaSMSj/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TM3JuNDFYKETyPZBZX/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/tktbM3mesjow1PCbuw/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3RsMGRtZWVpdzVkNHRzems3M3J3MTA1ZXY4MGs3cHg1ZnVzcTlpMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HQ10u3D2jCDSPR1WF2/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Y2s5bXhjb3p0dGk3bmQya3JmYmkxYmVnbXV5OGQxa2p1cnhzb3NmdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zRldKV118pggRr8F94/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Y2s5bXhjb3p0dGk3bmQya3JmYmkxYmVnbXV5OGQxa2p1cnhzb3NmdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/f1u5CqjD0kEhWg80fp/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Y2s5bXhjb3p0dGk3bmQya3JmYmkxYmVnbXV5OGQxa2p1cnhzb3NmdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/f1u5CqjD0kEhWg80fp/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Zm1ldm42ejNjdzB0Z2duYmdvdDcxY24wcmZoODB6b29hMHJybGM4ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/XEaPFbF62JCk9UWrhz/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Zm1ldm42ejNjdzB0Z2duYmdvdDcxY24wcmZoODB6b29hMHJybGM4ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/dasq61k2kA819GdfOU/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bDIwaGM1bzBmbzlpOGNleTRyeWI2NWp2OGR3aDFwM2xrdW40bG1jeSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/82qEi0qpwMZBF3nIzF/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cXhkMDNuZ2MycnBtZHo3N3V0bmQ2NzM3b2Z2cXJpeDl1MHlyYjc0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ELgCLF35QJlSpPa5jN/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cXhkMDNuZ2MycnBtZHo3N3V0bmQ2NzM3b2Z2cXJpeDl1MHlyYjc0MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Ida3OlnQqbkwRCk6kN/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3N2dzODhpc2JzbWYxeTF0ZHdwZ3FqaGY3ajk4OTBkczdkYXY1dnBkYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/FdsawCz6The1k9iRR1/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZThvNm1hbmF1N203cmM3aTJ5MDJtMWIwYm16dmM0ZjRwYmdmdjgyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ikbRAXLsu6JfnRgSXX/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZThvNm1hbmF1N203cmM3aTJ5MDJtMWIwYm16dmM0ZjRwYmdmdjgyMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/FLF67XBbe9oR7KEwC5/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bnVneHk2azF4ZmJ5dmQ2cG9xbXF4c2R0Z25jcHp2NHk0YjFjcGN4eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/myQifENXe4FEcR5xI1/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3M285dHh3YndjZnF3NWtrMnllOGlzb3pvZzZ2OHpra2drNzYyazkzcyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VcsirNyF0MYPB0KLLp/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NXUxNjFsdmQwdjc2YXlvZ2I3NmgzazIwanV4a2V2dGw3d24xa2F6NSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l4EoYGxG03xhvZGnu/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmZ1bXBwc2lsdmNmYTh1bHVrZHdreWFldXg0Mm01NjVoaXB3cW1oeCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/FbUByiI9F7di91DTgU/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmZ1bXBwc2lsdmNmYTh1bHVrZHdreWFldXg0Mm01NjVoaXB3cW1oeCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/FbUByiI9F7di91DTgU/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NWh1ZjJwam04d2xqbjQxaDE3MXE2MDdycXM0aDZnZTNlajJjZnY0eiZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/snAzKuDIYKxquM9vlH/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHk5NXV1OGxvOGNyaGNhZjE1cnhmaDJiMmNueGw5cHl6Z29mbHl0eCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/jsMVajr6pfHtz7OVSE/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHk5NXV1OGxvOGNyaGNhZjE1cnhmaDJiMmNueGw5cHl6Z29mbHl0eCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/l2SpSZ1yMhL6LYkO4/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamRnZTA4a3lrY2E2NTBnZW1sM2R5b3k2bjBtZ3l6aDhkYmk4OWdoNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/2u11zpzwyMTy8/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamRnZTA4a3lrY2E2NTBnZW1sM2R5b3k2bjBtZ3l6aDhkYmk4OWdoNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xTiTnqUxyWbsAXq7Ju/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamRnZTA4a3lrY2E2NTBnZW1sM2R5b3k2bjBtZ3l6aDhkYmk4OWdoNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9HQRIttS5C4Za/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamRnZTA4a3lrY2E2NTBnZW1sM2R5b3k2bjBtZ3l6aDhkYmk4OWdoNCZlcD12MV9naWZzX3NlYXRjaCZjdD1n/cqH9njWOsogq71mH7w/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZWw1bXR0cTA0dnZ0MTd0MjVvcnhzMDVseThodDMxOWZuOGVuZnVhayZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5fBH6z8aMV1RbA4FaSc/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3a2p4Y2J4ejluazVkMGRqNW80b3Uycnh6dmZsZXRycnRlMW8zejdlcSZlcD12MV9naWZzX3NlYXRjaCZjdD1n/nkdiORALQQtOM/giphy.gif",
+            "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3a2p4Y2J4ejluazVkMGRqNW80b3Uycnh6dmZsZXRycnRlMW8zejdlcSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/nkdiORALQQtOM/giphy.gif"
+        ];
+
+        // 100 unique money-making titles
+        const titles = [
+            "Make Money So Easy It's Your Turn!",
+            "Earn $500 Daily With This Simple Method",
+            "Financial Freedom Is Just One Click Away",
+            "Turn Your Spare Time Into Cash Flow",
+            "The Secret To Easy Money Revealed",
+            "Why Work Hard When You Can Work Smart?",
+            "Get Paid For Doing Almost Nothing",
+            "Unlock Your Financial Potential Today",
+            "The Ultimate Money Making Machine",
+            "From Zero to Hero: Income Revolution",
+            "Passive Income Streams Waiting For You",
+            "Make Money While You Sleep - Seriously!",
+            "Your Breakthrough To Financial Success",
+            "The System That Prints Money Daily",
+            "Experts Don't Want You To Know This",
+            "Double Your Income in 30 Days Guaranteed",
+            "The Lazy Person's Guide To Wealth",
+            "Cash Generating Secrets Exposed",
+            "How I Made $10,000 in One Week",
+            "The Algorithm That Generates Cash",
+            "Stop Being Broke - Start Making Money",
+            "Your Financial Transformation Starts Here",
+            "The Blueprint To Automatic Wealth",
+            "Earn More Than Your Full-Time Job",
+            "Money Making Hacks That Actually Work",
+            "Revolutionary System Changes Lives",
+            "The Wealth Code Finally Cracked",
+            "Generate Income 24/7 Without Effort",
+            "The Shortcut To Financial Independence",
+            "Why Stay Poor When You Can Get Rich?",
+            "The Internet's Best Kept Money Secret",
+            "Turn $10 Into $1000 With This Method",
+            "The Perfect Side Hustle For 2023",
+            "Money Floods In With This Technique",
+            "The App That Makes You Money Automatically",
+            "Earn Cash From Anywhere In The World",
+            "The Secret Wealth Button",
+            "How Ordinary People Make Extraordinary Money",
+            "The Money Tree Is Real - Here's How",
+            "Financial Abundance Is Your Birthright",
+            "Wake Up Richer Every Single Day",
+            "The Magic Formula For Instant Income",
+            "Never Worry About Bills Again",
+            "The Profit Generator You've Been Missing",
+            "Cash Overflow In Just 7 Days",
+            "The Underground Money Method Revealed",
+            "Turn Your Phone Into An ATM Machine",
+            "The Wealth Shortcut Everyone's Using",
+            "Money Making Mastery In Minutes Daily",
+            "The System That Beats The Stock Market",
+            "Earn More In A Day Than Most Do In Week",
+            "The Secret Society of Money Makers",
+            "Unlimited Earnings Potential unlocked",
+            "The Cash Button Everyone Is Clicking",
+            "From Broke To Millionaire In Months",
+            "The Internet Money Machine Is Real",
+            "Financial Miracle Happening Now",
+            "The End Of Financial Struggles Is Here",
+            "Money Magnetism: Attract Wealth Easily",
+            "The Revolutionary Income Multiplying Method",
+            "Earn Like The Top 1% From Home",
+            "The Wealth Hack That Changed Everything",
+            "Money Flows To You On Autopilot",
+            "The Golden Key To Financial Success",
+            "Breakthrough System Generates Cash Daily",
+            "The Money Making Revolution Starts Today",
+            "Earn $100/Hour With This Simple Trick",
+            "The Secret Behind Overnight Millionaires",
+            "Financial Abundance At Your Fingertips",
+            "The Ultimate Passive Income Discovery",
+            "Money Making Genius In The Making",
+            "The Wealth Accelerator Program",
+            "Turn Dreams Into Cash Reality",
+            "The Money Matrix Decoded For You",
+            "Earn While You Play, Travel, Or Relax",
+            "The Fortune Formula Finally Revealed",
+            "Financial Freedom Faster Than Ever",
+            "The Cash Generator Everyone Needs",
+            "Money Making Magic At Work",
+            "The Billionaire's Shortcut Shared",
+            "Earn More Without Extra Effort",
+            "The Wealth Creation Button",
+            "Money Multiplier Method Exposed",
+            "The Passive Profit System Unleashed",
+            "Financial Success On Your Terms",
+            "The Income Booster Of The Century",
+            "Money Making Masterclass Free Access",
+            "The Golden Goose Is Real - Grab Yours",
+            "Earn With Zero Experience Needed",
+            "The Wealth Building Miracle",
+            "Cash Creation Made Simple & Easy",
+            "The Money Making App Of Dreams",
+            "Financial Breakthrough In Minutes",
+            "The Secret To Endless Cash Flow",
+            "Money Making Phenomenon Sweeping Nation",
+            "The Easy Money Strategy Experts Use",
+            "Earn Big With Minimal Time Investment",
+            "The Wealth Wave Is Here - Ride It",
+            "Cash In On This Unexploited Opportunity",
+            "The Money Making Machine Is Waiting",
+            "Financial Empowerment Starts Now",
+            "The Income Solution You've Needed"
+        ];
+
+        // Function to get a random Giphy URL
+        function getRandomGiphy() {
+            const randomIndex = Math.floor(Math.random() * giphyUrls.length);
+            return giphyUrls[randomIndex];
+        }
+
+        // Function to get a random title
+        function getRandomTitle() {
+            const randomIndex = Math.floor(Math.random() * titles.length);
+            return titles[randomIndex];
+        }
+
+        // Set a random Giphy and title when the page loads
+        window.onload = function() {
+            const giphyImage = document.getElementById('giphy-image');
+            giphyImage.src = getRandomGiphy();
+            
+            const titleElement = document.getElementById('title');
+            titleElement.textContent = getRandomTitle();
+        };
+
+        // Subscribe function
+        function subscribe() {
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && emailRegex.test(email)) {
+                alert(`Thank you for subscribing with: ${email}\nWe've sent a confirmation email to your inbox.`);
+                document.getElementById('email').value = '';
+                
+                // Change the Giphy and title after subscription
+                document.getElementById('giphy-image').src = getRandomGiphy();
+                document.getElementById('title').textContent = getRandomTitle();
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Allow submitting with Enter key
+        document.getElementById('email').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                subscribe();
+            }
+        });
     </script>
 </body>
 </html>
